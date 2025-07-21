@@ -6,5 +6,5 @@ body{
   height: 200vh;
   background: black;
   color: aqua;
-  font-family: 'outfit';
+  font-family: 'outfit', sans-serif;
 }
