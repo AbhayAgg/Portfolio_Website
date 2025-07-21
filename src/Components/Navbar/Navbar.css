@@ -1,0 +1,111 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 170px;
+}
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+    font-size:20px;
+}
+.nav-connect {
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-size: 22px;
+  cursor: pointer;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.9) 0%,
+    rgba(16, 16, 16, 0.9) 80%
+  );
+  color: #e0f7fa;
+  border: 2px solid rgba(0,255,255,0.6);
+  transition: transform 0.3s ease;
+  display: inline-block; /* necessary to scale properly */
+}
+
+.nav-connect:hover {
+  background-color: #ff005e;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 94, 0.3);
+}
+
+.nav-connect:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(255, 0, 94, 0.4);
+}
+.nav menu li{
+  display:flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.anchor-link{
+  text-decoration: none;
+  color: aqua;
+}
+.nav-menu li {
+  background-size: 200% 100%;
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-position 0.3s ease;
+}
+
+/* On hover, raise it, enlarge, and darken */
+.nav-menu li:hover {
+  transform: scale(1.05) translateY(-3px);
+  background-position: 100% 50%; /* shifts gradient */
+  /* Optional darker shade – use darker solid color */
+  background-color: #333;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.nav-mob-close{
+  display: none;
+}
+.nav-mob-open{
+  display: none;
+}
+@media(max-width:768px){
+  .navbar{
+    margin:20px 50px;
+  }
+  .nav-connect{
+    display: none;
+  }
+  .nav-mob-open{
+    display: block;
+    position: fixed;
+    right:30px;
+  }
+  .nav-mob-close{
+    display: block;
+    position: relative;
+    top: 30px;
+    left: 290px;
+    width: 30px;
+  }
+  .nav-menu{
+    position: fixed;
+    flex-direction: column;
+    align-items: start;
+    top: 0;
+    gap:30px;
+    background-color: black;
+    width: 350px;
+    height: 100%;
+    z-index: 2;
+    transition: right 0.5s;
+    right: -350px;
+  }
+  .nav-menu li{
+    font-size: 30px;
+    padding-left: 100px;
+    flex-direction: row;
+    gap:20px;
+  }
+}
